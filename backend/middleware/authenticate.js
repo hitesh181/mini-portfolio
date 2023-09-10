@@ -18,12 +18,14 @@ const authenticate = async (req, res, next)=>{
         req.token = token;
         req.rootUser = rootUser
         req.userId = rootUser._id
+        console.log(req);
         //console.log("USER ID " , userId)
         next();
     }
     catch(err){
         res.status(401).json({msg:"Unauthorrized "})
-        console.log(err)
+
+        console.log("ERROR THOROWN FROM BACKEND")
     }   
     
 
