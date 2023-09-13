@@ -6,6 +6,9 @@ import  Contact from "./components/Contact"
 import  Signin from "./components/Signin"
 import  Signup from "./components/Signup"
 import {Route, Routes } from "react-router-dom"
+import ErrorPage from "./components/ErrorPage"
+import 'bootstrap/dist/css/bootstrap.css'
+
 //Route ko Routes ke andar daalan padta h and jave to render Componnets as elements
 
 
@@ -20,12 +23,15 @@ export default function App(){
     <div className="App">
       <Navbar/>
         <Routes>
-          <Route path='/' element={<Home/>} />
+          <Route exact path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/signup' element={<Signup/>} />
           <Route path='/signin' element={<Signin/>} />
-        </Routes>
+          {/* Used for unnkown paths*/}
+          <Route path='*' element={<ErrorPage/>}></Route>
+        </Routes> 
+       
     
      
     </div>
