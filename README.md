@@ -2,4 +2,4 @@
 Mern Application 
 update
 ## Deployment
-on cloud
+- on cloud
